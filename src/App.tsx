@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Menu, Sparkles } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import type { Tool } from '@/data/catalog';
 import { TOOLS } from '@/data/catalog';
 import { useSet, useOrderedSet } from '@/hooks/useLocalStorage';
@@ -270,6 +271,7 @@ export default function App() {
 
       <ToastViewport toasts={toasts} onDismiss={dismiss} />
       <InstallPrompt />
+      <Analytics />
     </div>
   );
 }
