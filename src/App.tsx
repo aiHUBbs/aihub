@@ -133,7 +133,7 @@ export default function App() {
 
         <main className="min-h-[calc(100vh-4rem)] min-w-0 flex-1 md:ml-64">
           {/* Mobile nav row: Menu, search, Find My AI */}
-          <div className="flex items-center gap-2 px-4 pt-4 md:hidden">
+          <div className="sticky top-0 z-40 flex items-center gap-2 border-b border-ink-700/60 bg-ink-950/95 px-4 py-3 backdrop-blur-xl md:hidden">
             <button
               type="button"
               onClick={() => setMobileNav(true)}

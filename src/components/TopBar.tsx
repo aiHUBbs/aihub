@@ -42,7 +42,7 @@ export function TopBar({
   const showDropdown = focused && query.trim().length > 0;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink-700/60 bg-ink-900/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 hidden border-b border-ink-700/60 bg-ink-900/80 backdrop-blur-xl md:block">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center gap-3 px-4 md:px-6">
         {/* Logo */}
         <button
