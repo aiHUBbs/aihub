@@ -52,13 +52,13 @@ export function Sidebar({
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden"
           onClick={onCloseMobile}
         />
       )}
 
       <aside
-        className={`fixed left-0 top-0 bottom-0 z-30 w-64 shrink-0 border-r border-ink-700/60 bg-ink-900 transition-transform md:top-16 md:translate-x-0 ${
+        className={`fixed left-0 top-0 bottom-0 z-50 w-64 shrink-0 border-r border-ink-700/60 bg-ink-900 transition-transform md:top-16 md:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
