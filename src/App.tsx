@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Menu, Sparkles } from 'lucide-react';
+import { Menu, Sparkles, Search } from 'lucide-react';
 import type { Tool } from '@/data/catalog';
 import { TOOLS } from '@/data/catalog';
 import { useSet, useOrderedSet } from '@/hooks/useLocalStorage';
@@ -132,21 +132,34 @@ export default function App() {
         />
 
         <main className="min-h-[calc(100vh-4rem)] min-w-0 flex-1 md:ml-64">
-          {/* Mobile nav button */}
-          <div className="flex items-center justify-between px-4 pt-4 md:hidden">
+          {/* Mobile nav row: Menu, search, Find My AI */}
+          <div className="flex items-center gap-2 px-4 pt-4 md:hidden">
             <button
               type="button"
               onClick={() => setMobileNav(true)}
-              className="inline-flex items-center gap-2 rounded-lg border border-ink-700 bg-ink-850 px-3 py-2 text-sm font-medium text-white"
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-ink-700 bg-ink-850 px-3 py-2 text-sm font-medium text-white"
             >
               <Menu size={16} /> Menu
             </button>
+            <div className="flex flex-1 items-center gap-2 rounded-lg border border-ink-700 bg-ink-850 px-3 py-2">
+              <Search size={16} className="shrink-0 text-ink-500" />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onFocus={() => window.scrollTo({ top: 0 })}
+                placeholder="Search AI tools…"
+                className="w-full bg-transparent text-sm text-white placeholder:text-ink-500 focus:outline-none"
+                autoComplete="off"
+                spellCheck={false}
+              />
+            </div>
             <button
               type="button"
               onClick={() => setQuizOpen(true)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-accent-500 to-violet-500 px-3 py-2 text-sm font-semibold text-white"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gradient-to-r from-accent-500 to-violet-500 px-3 py-2 text-sm font-semibold text-white"
             >
-              <Sparkles size={14} /> Find My AI
+              <Sparkles size={14} /> AI
             </button>
           </div>
 
